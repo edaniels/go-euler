@@ -11,6 +11,10 @@ func main() {
 	flag.IntVar(&lim, "limit", 1000, "Sum of multiples of 3 or 5 from [1,limit)")
 	flag.Parse()
 
+	if lim < 0 {
+		fmt.Printf("Limit (%d) cannot be negative. Exiting.\n", lim)
+	}
+
 	sum := 0
 
 	for i := 1; i < lim; i++ {
